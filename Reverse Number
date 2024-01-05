@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class MyClass {
+    public static void main(String args[]) {
+     Scanner sc = new Scanner(System.in);
+     
+     int num = sc.nextInt();
+     int n = num;
+     int r =0;
+    int temp =0;
+     while(n>0){
+         r = n%10;
+         n = n/10;
+        System.out.println(r);
+         
+     }
+     
+    }
+}
