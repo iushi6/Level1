@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class MyClass {
+    public static int countDigit(int x, int y){
+        int freq = 0;
+        while(x>0){
+           int d = x % 10;
+           if(d == y){
+               freq++;
+           }
+           x = x / 10;
+        }
+        return freq;
+    }
+    
+    public static void main(String args[]) {
+   Scanner sc = new Scanner(System.in);
+   
+   int num = sc.nextInt();
+   int digit =  sc.nextInt();
+   
+   int ans = countDigit(num,digit);
+   System.out.println("Number of Frequency of "+ digit+" is "+ans);
+   
+   
+    }
+}
