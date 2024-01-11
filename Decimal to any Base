@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+public class MyClass {
+    
+    public static int convertIt(int x, int y){
+        int newNum = 0;
+        int rem = 0;
+        int i =1;
+        
+        while(x>0){
+           rem = x % y;
+            newNum += rem * i ;
+            i *= 10 ;
+            x = x / y;
+        }
+        return newNum;
+        
+    }
+    
+    public static void main(String args[]) {
+      Scanner sc = new Scanner(System.in);
+      
+      int num = sc.nextInt();
+      int base = sc.nextInt();
+      
+      int ans = convertIt(num,base);
+      
+      System.out.println("Original Number is : "+num+" Converted Number is : "+ans);
+      
+    }
+}
