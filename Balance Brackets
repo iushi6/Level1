@@ -1,0 +1,57 @@
+import java.util.*;
+
+public class MyClass {
+    public static void main(String args[]) {
+   Scanner sc = new Scanner(System.in);
+   String str = sc.nextLine();
+   
+   Stack<Character> stk = new Stack<>();
+   for(int i=0;i<str.length();i++){
+       char ch = str.charAt(i);
+       
+       if(ch == '[' || ch == '(' || ch == '{'){
+           stk.push(ch);
+           
+       }else if (ch == ')'){
+        boolean val = check(stk , '(');
+           if(val == false){
+               System.out.println(val);
+               break;
+           }
+           
+       }else if ( ch == '}'){
+        boolean val = check(stk , '{');
+         if(val == false){
+               System.out.println(val);
+               break;
+           }
+            
+       }else if (ch == ']'){
+           boolean val = check(stk , ']');
+            if(val == false){
+               System.out.println(val);
+               break;
+           }
+       }
+     
+   }
+       
+       if(stk.size() == 0){
+           System.out.println("True");
+       }else{
+           System.out.println("False");
+       }
+   
+       
+   }
+   
+   public static boolean check(Stack<Character> s, char correspondingch) {
+    if (s.size() == 0) {
+        return false;
+    } else if (s.peek() == correspondingch) {
+        s.pop();
+    }
+    return true;
+}
+
+}
