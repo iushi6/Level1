@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class MyClass {
+    public static void main(String args[]) {
+   Scanner sc = new Scanner(System.in);
+   
+   int n = sc.nextInt();
+   int[] array = new int[n];
+   int[] nge = new int[n];
+   
+   for(int i =0;i<array.length;i++){
+       array[i] = sc.nextInt();
+   }
+   
+   Stack<Integer> stk = new Stack<>();
+  nge[array.length - 1] = -1 ;
+  stk.push(array[array.length - 1]);
+  
+   for(int i = array.length - 2; i>=0 ;i--){
+      while(stk.size() > 0 && array[i] >= stk.peek()){
+          stk.pop();
+      }
+      
+      if(stk.size() == 0){
+          nge[i] = -1;
+      }else{
+          nge[i] = stk.peek();
+      }
+      
+      stk.push(array[i]);
+       
+   }
+   
+   for(int i =0;i<array.length;i++){
+   System.out.println(nge[i]);
+   }
+   }
+
+}
